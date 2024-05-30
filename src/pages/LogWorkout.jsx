@@ -10,7 +10,10 @@ const LogWorkout = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically handle the form submission, e.g., send the data to a server
+    const newWorkout = { date, type, duration, notes };
+    const existingData = JSON.parse(localStorage.getItem("workoutData")) || [];
+    existingData.push(newWorkout);
+    localStorage.setItem("workoutData", JSON.stringify(existingData));
     toast({
       title: "Workout logged.",
       description: "Your workout has been successfully logged.",
@@ -18,7 +21,6 @@ const LogWorkout = () => {
       duration: 5000,
       isClosable: true,
     });
-    // Clear the form
     setDate("");
     setType("");
     setDuration("");

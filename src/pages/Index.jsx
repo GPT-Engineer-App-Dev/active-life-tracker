@@ -21,9 +21,11 @@ const Index = () => {
               Log Workout
             </Button>
           </Link>
-          <Button leftIcon={<FaHeartbeat />} colorScheme="teal" variant="solid" size="lg">
-            Monitor Health
-          </Button>
+          <Link to="/progress">
+            <Button leftIcon={<FaHeartbeat />} colorScheme="teal" variant="solid" size="lg">
+              Monitor Progress
+            </Button>
+          </Link>
         </Box>
       </VStack>
     </Container>
